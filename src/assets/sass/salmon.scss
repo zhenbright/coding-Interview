@@ -7,19 +7,79 @@
     object-fit: cover;
 }
 
-#salmon-overview{
+/*-- -------------------------- -->
+<---      overview              -->
+<--- -------------------------- -*/
+
+#salmon-overview {
+    .cs-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .text-content {
+        max-width: 700px;
+    }
 
     .image-group {
-        width: calc(730 / 16 * 1em);
-        height: calc(561 / 16 * 1em);
+        /* scales the whole group based on the view width size and stop when that vales equals .8em, resets at desktop */
+        font-size: min(2vw, .8em);
+        width: calc(779 / 16 * 1em);
+        height: calc(542 / 16 * 1em);
+        display: block;
+        position: relative;
+        z-index: 1;
 
+        .cs-picture {
+            position: absolute;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                position: absolute;
+                top: 0;
+                left: 0;
+                display: block;
+            }
+        }
         .cs-picture1 {
-            width: calc(730 / 16 * 1em);
-            height: calc(561 / 16 * 1em);
+            width: calc(779 / 16 * 1em);
+            height: calc(542 / 16 * 1em);
+            top: 0;
+            left: 0;
+        }
+    
+    }
+
+    .cs-ul {
+        margin-left: 20px;
+        ::marker {
+            color: var(--primary);
+            font-size: 1.4rem;
         }
     }
 }
+@media only screen and (min-width: 1024px) {
 
+    #salmon-overview {
+
+        .cs-container {
+            flex-direction: row;
+        }
+
+        .image-group {
+            /* scales the whole group based on the view width size and stop when that vales equals .8em, resets at desktop */
+            font-size: min(0.8vw, .8em);
+        }
+
+        .text-content {
+            max-width: 500px;
+        }
+    }
+}
 
 #salmon-location{
 
@@ -43,6 +103,58 @@
         .cs-picture1 {
             width: calc(747 / 16 * 1em);
             height: calc(690 / 16 * 1em);
+        }
+    }
+}
+
+/*-- -------------------------- -->
+<---      Book Service          -->
+<--- -------------------------- -*/
+#salmon-book-service {
+    
+    .cs-container {
+        background-color: #25082D;
+        border-radius: 27px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2rem;
+        position: relative;
+        max-height: 364px;
+        overflow: hidden;
+    }
+
+    .text-content {
+        padding: 66px 41px;
+        max-width: 700px;
+        
+        .cs-title {
+            color: white;
+        }
+        .cs-text {
+            color: white;
+        }
+    }
+    .mask-image {
+        img {
+            position: absolute;
+            top: -50px;
+            right: -150px;
+            width: 624px;
+            height: 624px;
+            border-radius: 50%;
+        }
+
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+
+    #salmon-book-service {
+
+        .cs-container {
+            flex-direction: row;
         }
     }
 }
