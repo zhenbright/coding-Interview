@@ -1066,8 +1066,7 @@ a {
                 justify-content: space-around;
                 flex-direction: column;
                 background-color: white;
-                max-width: 295px;
-                min-width: 286px;
+                width: 295px;
                 height: 240px;
                 border-radius: 26px;
                 padding: 33px;
@@ -1109,14 +1108,12 @@ a {
     }
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (min-width: 1024px) {
 
     #salmon-price-packge {
 
         .cs-container {
-            .packge-price-content{
-                flex-direction: column;
-            }
+            // flex-direction: row;
         }
     }
 }
